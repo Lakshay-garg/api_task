@@ -1,0 +1,72 @@
+<h1>Add Company</h1>
+<button (click)="cancel()" class="btn btn-danger">Cancel</button>
+<form [formGroup]="addForm" (ngSubmit)="submit()">
+    <label for="">Company Code</label>
+    <input type="text" formControlName="companyCode"><br>
+    <label for="">Company Type</label>
+    <input type="text" formControlName="typeId"><br>
+    <label for="">Company Name</label>
+    <input type="text" formControlName="companyName"><br>
+    <label for="">Upload Logo</label>
+    <input type="file" formControlName="logo"><br>
+    <label for="">Company Address</label>
+    <input type="text" formControlName="address"><br>
+    <label for="">Company Address</label>
+    <input type="text" formControlName="address"><br>
+    <label for="">Country</label>
+    <select formControlName="countryId" (ngModelChange)="onCountrySelect($event)">
+        <option value="">Select Country</option>
+        <option *ngFor="let country of countryList" [value]="country.val">{{country.title}}</option>
+    </select><br>
+    <label for="">State</label>
+    <select formControlName="stateId" (ngModelChange)="onStateSelect($event)">
+        <option value="">Select State</option>
+        <option *ngFor="let state of stateList" [value]="state.val">{{state.title}}</option>
+    </select><br>
+    <label for="">City</label>
+    <select formControlName="cityId">
+        <option value="">Select City</option>
+        <option *ngFor="let city of cityList" [value]="city.val">{{city.title}}</option>
+    </select><br>
+    <label for="">Company Email</label>
+    <input type="email" formControlName="companyEmail"><br>
+    <label for="">Phone No</label>
+    <input type="number" formControlName="phone"><br>
+    <label for="">Pincode</label>
+    <input type="number" formControlName="pinCode"><br>
+    <label for="">Company Statutory</label>
+    <input type="text" formControlName="companyDetails"><br>
+    <label for="">PAN No</label>
+    <input type="text" formControlName="panNo"><br>
+    <label for="">MSME Reg. ?</label>
+    <input type="text" formControlName="msmeReg"><br>
+    <label for="">MSME Reg No</label>
+    <input type="text" formControlName="msmeRegNo"><br>
+    <label for="">Authorized Signatory</label>
+    <input type="text" formControlName="authorizedSignatory"><br>
+    <label for="">Registration No</label>
+    <input type="text" formControlName="regNo"><br>
+    <label for="">Status</label>
+    <select formControlName="status">
+        <option value="">Select Status</option>
+        <option *ngFor="let status of statusList" [value]="status.val">{{status.title}}</option>
+    </select><br>
+    <label for="">Authorized Email</label>
+    <input type="email" formControlName="authorisedEmail"><br>
+    <label for="">RCCM</label>
+    <input type="text" formControlName="rccm"><br>
+    <label for="">ID.NAT</label>
+    <input type="text" formControlName="idNat"><br>
+    <label for="">No. Impot</label>
+    <input type="text" formControlName="noImpot"><br>
+    <label for="">Bank Details</label>
+    <input type="text" formControlName="bankDetails"><br>
+    <label for="">Bank Account</label>
+    <input type="text" formControlName="bankAccounts"><br>
+    <label for="">General Attachment</label>
+    <input type="text" formControlName="generalAttachments"><br>
+    <label for="">General Attachment</label>
+    <input type="file" formControlName="documents"><br>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
